@@ -1,10 +1,10 @@
-# Metodo da Bissecao
+# Método da Bisseção
 
-## Descricao do trabalho
+## Descrição do trabalho
 
-Este trabalho tem como objetivo desenvolver a implementacao do calculo numerico utilizando o **Metodo da Bissecao**.
+Este trabalho tem como objetivo desenvolver a implementação do cálculo numérico utilizando o **Método da Bisseção**.
 
-O metodo sera aplicado para encontrar uma raiz aproximada da funcao:
+O método será aplicado para encontrar uma raiz aproximada da função:
 
 \[
 f(x) = e^x - x^2 - 3x
@@ -16,13 +16,13 @@ no intervalo:
 [-4, -3]
 \]
 
-A implementacao deve utilizar o **erro absoluto** como criterio de parada e tambem deve guardar a **quantidade de iteracoes** realizadas ate encontrar a solucao aproximada.
+A implementação deve utilizar o **erro absoluto** como critério de parada e também deve guardar a **quantidade de iterações** realizadas até encontrar a solução aproximada.
 
 ---
 
-## Funcao utilizada
+## Função utilizada
 
-A funcao escolhida para o problema e:
+A função escolhida para o problema é:
 
 ```text
 f(x) = e^x - x^2 - 3x
@@ -30,62 +30,56 @@ f(x) = e^x - x^2 - 3x
 
 Onde:
 
-- `e^x` representa o numero de Euler elevado a `x`.
+- `e^x` representa o número de Euler elevado a `x`.
 - `x^2` representa `x` ao quadrado.
-- `-3x` representa o termo linear da funcao.
+- `-3x` representa o termo linear da função.
 
 ---
 
 ## Intervalo inicial
 
-O intervalo informado para aplicacao do metodo e:
+O intervalo informado para aplicação do método é:
 
 ```text
 a = -4
 b = -3
 ```
 
-Antes de aplicar o metodo da bissecao, e necessario verificar se existe mudanca de sinal no intervalo, ou seja:
+Antes de aplicar o método da bisseção, é necessário verificar se existe mudança de sinal no intervalo, ou seja:
 
 ```text
 f(a) * f(b) < 0
 ```
 
-Caso essa condicao seja verdadeira, existe pelo menos uma raiz no intervalo informado.
+Caso essa condição seja verdadeira, existe pelo menos uma raiz no intervalo informado.
 
 ---
 
-## Metodo da Bissecao
+## Método da Bisseção
 
-O Metodo da Bissecao consiste em dividir o intervalo ao meio repetidamente, aproximando-se da raiz da funcao.
+O Método da Bisseção consiste em dividir o intervalo ao meio repetidamente, aproximando-se da raiz da função.
 
-A cada iteracao, calcula-se o ponto medio:
+A cada iteração, calcula-se o ponto médio:
 
 ```text
 m = (a + b) / 2
 ```
 
-Depois, verifica-se em qual metade do intervalo esta a raiz, analisando o sinal da funcao.
+Depois, verifica-se em qual metade do intervalo está a raiz, analisando o sinal da função.
 
 ---
 
-## Criterio de parada
+## Critério de parada
 
-O criterio de parada utilizado sera o **erro absoluto**.
+O critério de parada utilizado será o **erro absoluto**.
 
-O erro absoluto pode ser calculado por:
-
-```text
-erro = |b - a|
-```
-
-ou pela diferenca entre dois pontos medios consecutivos:
+No método da bisseção, uma definição comum para o erro absoluto é:
 
 ```text
-erro = |m_atual - m_anterior|
+erro = |b - a| / 2
 ```
 
-O processo continua ate que o erro seja menor que a tolerancia definida.
+O processo continua até que o erro seja menor que a tolerância definida.
 
 Exemplo:
 
@@ -98,51 +92,70 @@ erro < tolerancia
 ## Dados do problema
 
 ```text
-Funcao: f(x) = e^x - x^2 - 3x
+Função: f(x) = e^x - x^2 - 3x
 Intervalo: [-4, -3]
-Metodo: Bissecao
-Criterio de parada: Erro absoluto
-Informacao armazenada: Quantidade de iteracoes
+Método: Bisseção
+Critério de parada: Erro absoluto
+Informação armazenada: Quantidade de iterações
+```
+
+---
+
+## Como executar
+
+No terminal, execute:
+
+```bash
+python bisseccao.py
+```
+
+Depois informe os dados:
+
+```text
+Limite inferior a: -4
+Limite superior b: -3
+Tolerância (ex: 1e-6): 1e-6
+Máximo de iterações: 100
 ```
 
 ---
 
 ## Resultado esperado
 
-Ao final da execucao, o programa deve apresentar:
+Ao final da execução, o programa deve apresentar:
 
-- A raiz aproximada da funcao.
+- A raiz aproximada da função.
 - O valor de `f(x)` na raiz aproximada.
 - O erro absoluto final.
-- A quantidade de iteracoes realizadas.
+- A quantidade de iterações realizadas.
 
-Exemplo de saida esperada:
+Exemplo de saída esperada:
 
 ```text
-Raiz aproximada: -3.05
-f(raiz): valor proximo de zero
-Erro absoluto: valor menor que a tolerancia
-Quantidade de iteracoes: numero total de repeticoes
+Raiz aproximada: -3.016240119934082
+f(raiz): 0.000000949
+Erro absoluto: 0.000000953
+Quantidade de iterações: 20
 ```
 
 ---
 
-## Objetivo da implementacao
+## Objetivo da implementação
 
-O objetivo principal e compreender e aplicar o Metodo da Bissecao para resolver equacoes nao lineares, utilizando uma funcao matematica especifica e controlando o processo por meio do erro absoluto.
+O objetivo principal é compreender e aplicar o Método da Bisseção para resolver equações não lineares, utilizando uma função matemática específica e controlando o processo por meio do erro absoluto.
 
-Ademais, a implementacao deve permitir acompanhar a quantidade de iteracoes necessarias para que o metodo encontre uma aproximacao aceitavel da raiz.
+Ademais, a implementação deve permitir acompanhar a quantidade de iterações necessárias para que o método encontre uma aproximação aceitável da raiz.
 
 ---
 
-## Conclusao
+## Conclusão
 
-O Metodo da Bissecao e um metodo numerico simples e eficiente para encontrar raizes de funcoes continuas em intervalos onde ha mudanca de sinal.
+O Método da Bisseção é um método numérico simples e eficiente para encontrar raízes de funções contínuas em intervalos onde há mudança de sinal.
 
-Neste trabalho, ele sera utilizado para resolver a equacao:
+Neste trabalho, ele será utilizado para resolver a equação:
 
 \[
 e^x - x^2 - 3x = 0
 \]
 
-no intervalo `[-4, -3]`, utilizando erro absoluto como criterio de parada e registrando o numero de iteracoes realizadas.
+no intervalo `[-4, -3]`, utilizando erro absoluto como critério de parada e registrando o número de iterações realizadas.
